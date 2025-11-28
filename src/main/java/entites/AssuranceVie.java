@@ -1,11 +1,13 @@
 package entites;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import java.time.LocalDate;
 
 @Entity
+@DiscriminatorValue("Assurance_vie")
 public class AssuranceVie extends Compte {
 
     @Column(name = "dateFin")
@@ -17,5 +19,15 @@ public class AssuranceVie extends Compte {
 
     public AssuranceVie(String numero, double solde) {
         super(numero, solde);
+    }
+
+    public AssuranceVie() {
+
+    }
+
+    public void setTaux(double v) {
+    }
+
+    public void setDateFin(LocalDate of) {
     }
 }

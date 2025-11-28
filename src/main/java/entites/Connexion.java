@@ -6,13 +6,16 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Connexion {
     public static void main(String[] args) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("banque");
         EntityManager em = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = em.getTransaction();transaction.begin();
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
 
 
 //    Client c = new Client();
@@ -29,16 +32,20 @@ public class Connexion {
 //
 //   //
 
+        Client c = em.find(Client.class,1);
+        System.out.println(c);
 
-        Virement v = new Virement();
-        v.setMontant(100);
-        v.setMotif("Transfert");
-        v.setDate(LocalDateTime.now());
-        v.setBeneficiaire("Alice");
 
-        em.persist(v);
+        System.out.println("-".repeat(100));
+        Operation o = em.find(Operation.class,1);
+        System.out.println(o);
 
-    transaction.commit();
+//        em.persist();
+//        em.persist();
+//        em.persist();
+//
+//        em.getTransaction().commit();
 
+
+        }
     }
-}

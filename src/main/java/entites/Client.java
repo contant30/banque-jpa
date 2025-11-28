@@ -103,4 +103,19 @@ public class Client {
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
+
+    public void setComptes(Set<Compte> comptes) {    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", dateNaissance=" + dateNaissance +
+                ", adresse=" + adresse +
+                ", banque=" + banque +
+                ", compte=" + compte +
+                '}';
+    }
 }

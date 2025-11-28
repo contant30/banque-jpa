@@ -38,6 +38,10 @@ public class Compte {
         this.solde = solde;
     }
 
+    public Compte() {
+
+    }
+
     public int getId() {
         return id;
     }
