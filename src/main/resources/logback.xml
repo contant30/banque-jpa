@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<configuration>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- logger pour le package fr.diginamic -->
+
+    <logger name="fr.diginamic" level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+    <!-- logger de type root-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+
+</configuration>

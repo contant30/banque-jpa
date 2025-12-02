@@ -1,4 +1,4 @@
-package entites;
+package fr.diginamic.entites;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -6,10 +6,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "operation")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE_OPER")
 
-public class Operation {
+public abstract class Operation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Operation {
     private String motif;
 
     @ManyToOne
-    @JoinColumn(name="COM")
+    @JoinColumn(name="COMPTE")
     private Compte compte;
 
     public Operation() {

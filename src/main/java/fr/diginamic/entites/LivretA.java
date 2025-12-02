@@ -1,9 +1,8 @@
-package entites;
+package fr.diginamic.entites;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
 @DiscriminatorValue("Livret_A")

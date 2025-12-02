@@ -1,4 +1,4 @@
-package entites;
+package fr.diginamic.entites;
 
 
 import javax.persistence.*;
@@ -6,10 +6,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "compte")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "TYPE_VIR")
 
-public class Compte {
+public abstract class Compte {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

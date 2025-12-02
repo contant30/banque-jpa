@@ -1,4 +1,4 @@
-package entites;
+package fr.diginamic.entites;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -37,11 +37,9 @@ public class Client {
     @JoinTable(name="COM_CLI",
             joinColumns = @JoinColumn(name="ID_CLI", referencedColumnName="ID"),
             inverseJoinColumns= @JoinColumn(name="ID_COM",referencedColumnName="ID"))
-
-
-
-
     private Set<Compte> compte;
+
+
 
     // constructeur
     public Client(String nom) {   }

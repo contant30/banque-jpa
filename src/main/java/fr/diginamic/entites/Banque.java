@@ -1,4 +1,4 @@
-package entites;
+package fr.diginamic.entites;
 
 
 import javax.persistence.*;
@@ -36,7 +36,7 @@ public class Banque {
         this.id = id;
     }
 
-    public String getNom() {
+    public String getNom(String caisseEpargne) {
         return nom;
     }
 
